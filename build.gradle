@@ -19,10 +19,33 @@ plugins {
 // Define the main class for the application
 mainClassName = 'App'
 
+
+configurations {
+    all*.exclude group: 'org.slf4j', module: 'slf4j-log4j12'
+}
+
 dependencies {
     // This dependency is found on compile classpath of this component and consumers.
     compile 'com.google.guava:guava:23.0'
+//implementation group: 'org.apache.logging.log4j', name: 'log4j', version: '2.14.1', ext: 'pom'
 
+// https://mvnrepository.com/artifact/org.slf4j/log4j-over-slf4j
+implementation group: 'org.slf4j', name: 'log4j-over-slf4j', version: '1.7.28'
+
+// https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core
+//implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.4.1'
+//compile group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.4.1'
+
+
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '1.3-alpha8'
+    //compile group: 'com.jasperwireless', name: 'jasper-logger', version: '1.0.+'
+    //compile group: 'org.slf4j', name: 'log4j-over-slf4j-jasper', version: '0.+'
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.4.1'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.4.1'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.4.1'
+      runtime(group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.5')
+        
     // Use JUnit test framework
     testCompile 'junit:junit:4.12'
 }
@@ -32,4 +55,6 @@ repositories {
     // Use jcenter for resolving your dependencies.
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
+        google()
+
 }

@@ -63,7 +63,7 @@ set CMD_LINE_ARGS=%*
 :execute
 @rem Setup the command line
 
-set CLASSPATH=%APP_HOME%\lib\log4j.jar;%APP_HOME%\lib\guava-23.0.jar;%APP_HOME%\lib\jsr305-1.3.9.jar;%APP_HOME%\lib\error_prone_annotations-2.0.18.jar;%APP_HOME%\lib\j2objc-annotations-1.1.jar;%APP_HOME%\lib\animal-sniffer-annotations-1.14.jar
+set CLASSPATH=%APP_HOME%\lib\log4j.jar;%APP_HOME%\lib\guava-23.0.jar;%APP_HOME%\lib\log4j-slf4j-impl-2.4.1.jar;%APP_HOME%\lib\log4j-over-slf4j-1.7.28.jar;%APP_HOME%\lib\log4j-core-2.4.1.jar;%APP_HOME%\lib\jsr305-1.3.9.jar;%APP_HOME%\lib\error_prone_annotations-2.0.18.jar;%APP_HOME%\lib\j2objc-annotations-1.1.jar;%APP_HOME%\lib\animal-sniffer-annotations-1.14.jar;%APP_HOME%\lib\slf4j-api-1.7.28.jar;%APP_HOME%\lib\log4j-api-2.4.1.jar
 
 @rem Execute log4j
 "%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %LOG4J_OPTS%  -classpath "%CLASSPATH%" App %CMD_LINE_ARGS%
